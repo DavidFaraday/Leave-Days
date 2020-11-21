@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		5530B0F62567D0C000020A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B0F52567D0C000020A29 /* AppDelegate.swift */; };
 		5530B0F82567D0C000020A29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B0F72567D0C000020A29 /* SceneDelegate.swift */; };
-		5530B0FA2567D0C000020A29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B0F92567D0C000020A29 /* ViewController.swift */; };
+		5530B0FA2567D0C000020A29 /* MainLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B0F92567D0C000020A29 /* MainLeaveViewController.swift */; };
 		5530B0FD2567D0C000020A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5530B0FB2567D0C000020A29 /* Main.storyboard */; };
 		5530B1002567D0C000020A29 /* Leave_Days.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5530B0FE2567D0C000020A29 /* Leave_Days.xcdatamodeld */; };
 		5530B1022567D0C100020A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5530B1012567D0C100020A29 /* Assets.xcassets */; };
 		5530B1052567D0C100020A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5530B1032567D0C100020A29 /* LaunchScreen.storyboard */; };
+		5530B10E2567E23000020A29 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B10D2567E23000020A29 /* AddEntryViewController.swift */; };
+		5530B1172567E95C00020A29 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5530B1162567E95C00020A29 /* CustomTableViewCell.swift */; };
+		55DDF47025682AA200B96A60 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DDF46F25682AA200B96A60 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5530B0F22567D0C000020A29 /* Leave Days.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Days.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5530B0F52567D0C000020A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5530B0F72567D0C000020A29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5530B0F92567D0C000020A29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5530B0F92567D0C000020A29 /* MainLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLeaveViewController.swift; sourceTree = "<group>"; };
 		5530B0FC2567D0C000020A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5530B0FF2567D0C000020A29 /* Leave_Days.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Leave_Days.xcdatamodel; sourceTree = "<group>"; };
 		5530B1012567D0C100020A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5530B1042567D0C100020A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5530B1062567D0C100020A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5530B10D2567E23000020A29 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		5530B1162567E95C00020A29 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		55DDF46F25682AA200B96A60 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,10 @@
 			children = (
 				5530B0F52567D0C000020A29 /* AppDelegate.swift */,
 				5530B0F72567D0C000020A29 /* SceneDelegate.swift */,
-				5530B0F92567D0C000020A29 /* ViewController.swift */,
+				5530B0F92567D0C000020A29 /* MainLeaveViewController.swift */,
+				5530B10D2567E23000020A29 /* AddEntryViewController.swift */,
+				5530B1162567E95C00020A29 /* CustomTableViewCell.swift */,
+				55DDF46F25682AA200B96A60 /* Extensions.swift */,
 				5530B0FB2567D0C000020A29 /* Main.storyboard */,
 				5530B1012567D0C100020A29 /* Assets.xcassets */,
 				5530B1032567D0C100020A29 /* LaunchScreen.storyboard */,
@@ -140,10 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5530B1172567E95C00020A29 /* CustomTableViewCell.swift in Sources */,
 				5530B1002567D0C000020A29 /* Leave_Days.xcdatamodeld in Sources */,
-				5530B0FA2567D0C000020A29 /* ViewController.swift in Sources */,
+				5530B0FA2567D0C000020A29 /* MainLeaveViewController.swift in Sources */,
 				5530B0F62567D0C000020A29 /* AppDelegate.swift in Sources */,
+				5530B10E2567E23000020A29 /* AddEntryViewController.swift in Sources */,
 				5530B0F82567D0C000020A29 /* SceneDelegate.swift in Sources */,
+				55DDF47025682AA200B96A60 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P6AJEE272;
 				INFOPLIST_FILE = "Leave Days/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P6AJEE272;
 				INFOPLIST_FILE = "Leave Days/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
