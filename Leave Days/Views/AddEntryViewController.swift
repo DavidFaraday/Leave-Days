@@ -26,6 +26,7 @@ class AddEntryViewController: UIViewController {
         
         setTextFieldInputView()
         configureTypePickerView()
+        setDefaultLeaveType()
         
         if leaveToEdit != nil {
             updateUIForEdit()
@@ -69,6 +70,9 @@ class AddEntryViewController: UIViewController {
         leaveTypeTextField.inputAccessoryView = toolBar
     }
     
+    private func setDefaultLeaveType() {
+        leaveTypeTextField.text = LeaveType.allCases[0].rawValue
+    }
     
 
     

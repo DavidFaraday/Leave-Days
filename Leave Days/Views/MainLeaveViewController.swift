@@ -64,7 +64,7 @@ class MainLeaveViewController: UIViewController {
 
     //MARK: - IBActions
     @IBAction func menuButtonPressed(_ sender: Any) {
-        showResetMenu()
+        showMenuOptions()
     }
     
     @IBAction func addLeaveButtonPressed(_ sender: Any) {
@@ -89,6 +89,28 @@ class MainLeaveViewController: UIViewController {
         sickLeaveLabel.text = "Sick leave: " + String(format: "%.0f", totalSickLeaves)
     }
     
+    private func showMenuOptions() {
+        
+        let alertController = UIAlertController(title: "Menu", message: "Set yearly defaults or delete all entries and reset the year.", preferredStyle: .actionSheet)
+        
+        
+        alertController.addAction(UIAlertAction(title: "Change Yearly Totals", style: .default, handler: { (action) in
+            
+            self.showResetMenu()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Reset To Defaults", style: .destructive, handler: { (action) in
+            
+            self.resetCoreData()
+            self.resetUserDefaults()
+            self.updateTotalAmounts()
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    
     private func showResetMenu() {
         
         let alertController = UIAlertController(title: "Set Year Defaults", message: nil, preferredStyle: .alert)
@@ -111,12 +133,6 @@ class MainLeaveViewController: UIViewController {
             self.updateTotalAmounts()
         }))
         
-        alertController.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { (action) in
-            
-            self.resetCoreData()
-            self.resetUserDefaults()
-            self.updateTotalAmounts()
-        }))
 
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
@@ -253,7 +269,7 @@ extension MainLeaveViewController: UITableViewDelegate {
 extension MainLeaveViewController: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        print("update")
+
         updateTotalAmounts()
         tableView.reloadData()
     }

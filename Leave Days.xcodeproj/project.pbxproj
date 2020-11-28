@@ -45,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550C094C2572D5A4004AB84A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55DDF46F25682AA200B96A60 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		550C094E2572D5AD004AB84A /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				5530B1162567E95C00020A29 /* CustomTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		550C09502572D5B8004AB84A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5530B0F92567D0C000020A29 /* MainLeaveViewController.swift */,
+				5530B10D2567E23000020A29 /* AddEntryViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5530B0E92567D0C000020A29 = {
 			isa = PBXGroup;
 			children = (
@@ -66,10 +91,9 @@
 			children = (
 				5530B0F52567D0C000020A29 /* AppDelegate.swift */,
 				5530B0F72567D0C000020A29 /* SceneDelegate.swift */,
-				5530B0F92567D0C000020A29 /* MainLeaveViewController.swift */,
-				5530B10D2567E23000020A29 /* AddEntryViewController.swift */,
-				5530B1162567E95C00020A29 /* CustomTableViewCell.swift */,
-				55DDF46F25682AA200B96A60 /* Extensions.swift */,
+				550C09502572D5B8004AB84A /* Views */,
+				550C094E2572D5AD004AB84A /* CustomCells */,
+				550C094C2572D5A4004AB84A /* Extensions */,
 				5530B0FB2567D0C000020A29 /* Main.storyboard */,
 				5530B1012567D0C100020A29 /* Assets.xcassets */,
 				5530B1032567D0C100020A29 /* LaunchScreen.storyboard */,
