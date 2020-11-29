@@ -18,6 +18,8 @@ class MainLeaveViewController: UIViewController {
     @IBOutlet weak var sickLeaveLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var menuButtonOutlet: UIBarButtonItem!
+    
     //MARK: - Vars
     var leaveFetchResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Leave")
@@ -107,7 +109,19 @@ class MainLeaveViewController: UIViewController {
         }))
 
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        
+        //for iPad not to crash
+        if UIDevice().userInterfaceIdiom == .pad {
+            if let currentPopoverPresentationController = alertController.popoverPresentationController{
+                
+                currentPopoverPresentationController.barButtonItem = menuButtonOutlet
+                
+                currentPopoverPresentationController.permittedArrowDirections = .up
+                self.present(alertController, animated: true, completion: nil)
+            }
+        } else{
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     

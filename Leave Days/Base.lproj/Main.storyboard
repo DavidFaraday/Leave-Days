@@ -178,6 +178,7 @@
                         <outlet property="annualLeaveBackgroundView" destination="eVw-QU-5HM" id="lS4-dR-F0i"/>
                         <outlet property="annualLeaveLabel" destination="0qL-hg-EXP" id="wqX-ty-zdz"/>
                         <outlet property="headerView" destination="hqV-7h-hyE" id="RhZ-EP-dGy"/>
+                        <outlet property="menuButtonOutlet" destination="yDM-A0-jde" id="9mb-yf-ulF"/>
                         <outlet property="sickLeaveBackgroundView" destination="hP7-yr-APN" id="Mfb-0U-gyT"/>
                         <outlet property="sickLeaveLabel" destination="3Lf-Ps-QTn" id="jR6-CB-lik"/>
                         <outlet property="tableView" destination="MXZ-Ow-bZX" id="klj-P4-SOn"/>
