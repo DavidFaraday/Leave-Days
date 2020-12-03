@@ -27,7 +27,7 @@ class CustomTableViewCell: UITableViewCell {
     
     func configureCell(with leave: Leave) {
         
-        typeNameLabel.text = leave.typeName
+        typeNameLabel.text = leave.typeName! + " Leave"
         numberOfDaysLabel.text = String(format: "Days: %.0f", leave.numberOfDays)
         startDateLabel.text = "Start: \(leave.startDate?.dayMonth() ?? "")"
         endDateLabel.text = "End: \(leave.endDate?.dayMonth() ?? "")"

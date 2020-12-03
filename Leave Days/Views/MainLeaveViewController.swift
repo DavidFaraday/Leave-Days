@@ -86,6 +86,7 @@ class MainLeaveViewController: UIViewController {
     private func updateTotalAmounts() {
         
         calculateLeaves()
+        setBackgroundColor()
         
         annualLeaveLabel.text = "Annual leave: " + String(format: "%.0f", totalLeaves)
         sickLeaveLabel.text = "Sick leave: " + String(format: "%.0f", totalSickLeaves)
@@ -214,8 +215,15 @@ class MainLeaveViewController: UIViewController {
             }
         }
 
+        
         totalLeaves = totalLeaves - usedLeave
         totalSickLeaves = totalSickLeaves - usedSickLeave
+    }
+    
+    private func setBackgroundColor() {
+        
+        annualLeaveBackgroundView.backgroundColor = totalLeaves > 0 ? DefaultColor.blue : DefaultColor.red
+        sickLeaveBackgroundView.backgroundColor = totalSickLeaves > 0 ? DefaultColor.blue : DefaultColor.red
     }
 
 

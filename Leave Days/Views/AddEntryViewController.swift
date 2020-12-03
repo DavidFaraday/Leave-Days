@@ -43,8 +43,13 @@ class AddEntryViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         
         if leaveTypeTextField.text != "" {
-             
-            leaveToEdit != nil ? EditEntry() : saveEntry()
+            
+            if isDateValid() {
+                leaveToEdit != nil ? editEntry() : saveEntry()
+            } else {
+                let notification = AppNotification(title: "Error!", subTitle: "End date is before start date!", view: self)
+                notification.showNotification()
+            }
         }
     }
     
@@ -81,7 +86,7 @@ class AddEntryViewController: UIViewController {
         
         let context = AppDelegate.context
         let leaveEntry = Leave(context: context)
-        leaveEntry.typeName = leaveTypeTextField.text
+        leaveEntry.typeName = leaveTypeTextField.text!
         leaveEntry.startDate = startDatePicker.date
         leaveEntry.endDate = endDatePicker.date
         leaveEntry.numberOfDays = numberOfDaysFromDates()
@@ -92,9 +97,9 @@ class AddEntryViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    private func EditEntry() {
+    private func editEntry() {
         
-        leaveToEdit!.typeName = leaveTypeTextField.text
+        leaveToEdit!.typeName = leaveTypeTextField.text!
         leaveToEdit!.startDate = startDatePicker.date
         leaveToEdit!.endDate = endDatePicker.date
         leaveToEdit!.numberOfDays = numberOfDaysFromDates()
@@ -132,6 +137,9 @@ class AddEntryViewController: UIViewController {
         dismissKeyboard()
     }
 
+    private func isDateValid() -> Bool {
+        return startDatePicker.date.interval(ofComponent: .day, fromDate: endDatePicker.date) >= 0.0
+    }
     
     //MARK: - Editing
     private func updateUIForEdit() {
