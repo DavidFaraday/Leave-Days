@@ -16,7 +16,7 @@ class AddEntryViewController: UIViewController {
     
     //MARK: - Vars
     var leaveTypePicker = UIPickerView()
-    var isAnnualLeave = false
+    var isAnnualLeave = true
     
     var leaveToEdit: Leave?
 
@@ -113,7 +113,8 @@ class AddEntryViewController: UIViewController {
 
     //MARK: - Helpers
     private func numberOfDaysFromDates() -> Float {
-        return startDatePicker.date.interval(ofComponent: .day, fromDate: endDatePicker.date) + 1
+
+        return Float(startDatePicker.date.daysCount(until: endDatePicker.date).workingDays)
     }
     
     private func vibrate() {
@@ -132,7 +133,7 @@ class AddEntryViewController: UIViewController {
 
         leaveTypeTextField.text = LeaveType.allCases[leaveTypePicker.selectedRow(inComponent: 0)].rawValue
         
-        isAnnualLeave = (leaveTypePicker.selectedRow(inComponent: 0) != 0)
+        isAnnualLeave = (leaveTypePicker.selectedRow(inComponent: 0) == 0)
 
         dismissKeyboard()
     }

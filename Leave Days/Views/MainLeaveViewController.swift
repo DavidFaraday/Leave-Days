@@ -132,11 +132,13 @@ class MainLeaveViewController: UIViewController {
         
         alertController.addTextField { (annualTextField) in
             annualTextField.placeholder = "Total Annual Leaves"
+            annualTextField.keyboardType = .numberPad
             self.annualLeaveTextField = annualTextField
         }
         
         alertController.addTextField { (sickTextField) in
             sickTextField.placeholder = "Total Sick Leaves"
+            sickTextField.keyboardType = .numberPad
 
             self.sickLeaveTextField = sickTextField
         }
