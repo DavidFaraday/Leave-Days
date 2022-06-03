@@ -11,6 +11,7 @@ class AddEntryViewController: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var leaveTypeTextField: UITextField!
+    
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
@@ -53,6 +54,16 @@ class AddEntryViewController: UIViewController {
         }
     }
     
+    @IBAction func startDatePickerValueChanged(_ sender: UIDatePicker) {
+        endDatePicker.minimumDate = sender.date
+    }
+    
+    @IBAction func endDatePickerValueChanged(_ sender: UIDatePicker) {
+        
+        startDatePicker.maximumDate = sender.date
+
+    }
+    
     //MARK: -  Configuration
     private func configureTypePickerView() {
         
@@ -93,6 +104,7 @@ class AddEntryViewController: UIViewController {
         leaveEntry.isAnnualLeave = isAnnualLeave
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
         vibrate()
         self.dismiss(animated: true, completion: nil)
     }
@@ -174,11 +186,10 @@ extension AddEntryViewController: UIPickerViewDataSource {
 
 extension AddEntryViewController: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView,
-                didSelectRow row: Int,
-                inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         isAnnualLeave = row != 0
         leaveTypeTextField.text = LeaveType.allCases[row].rawValue
     }
 }
+

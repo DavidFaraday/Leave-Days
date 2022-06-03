@@ -94,7 +94,7 @@ class MainLeaveViewController: UIViewController {
     
     private func showMenuOptions() {
         
-        let alertController = UIAlertController(title: "Menu", message: "Set yearly defaults or delete all entries and reset the year.", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: "Set yearly defaults or delete all entries and reset the year.", preferredStyle: .actionSheet)
         
         
         alertController.addAction(UIAlertAction(title: "Change Yearly Totals", style: .default, handler: { (action) in
