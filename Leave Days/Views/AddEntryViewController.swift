@@ -61,7 +61,6 @@ class AddEntryViewController: UIViewController {
     @IBAction func endDatePickerValueChanged(_ sender: UIDatePicker) {
         
         startDatePicker.maximumDate = sender.date
-
     }
     
     //MARK: -  Configuration
@@ -102,7 +101,7 @@ class AddEntryViewController: UIViewController {
         leaveEntry.endDate = endDatePicker.date
         leaveEntry.numberOfDays = numberOfDaysFromDates()
         leaveEntry.isAnnualLeave = isAnnualLeave
-        
+
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         vibrate()
@@ -125,8 +124,7 @@ class AddEntryViewController: UIViewController {
 
     //MARK: - Helpers
     private func numberOfDaysFromDates() -> Float {
-
-        return Float(startDatePicker.date.daysCount(until: endDatePicker.date).workingDays)
+        Float(startDatePicker.date.daysCount(until: endDatePicker.date).workingDays)
     }
     
     private func vibrate() {
@@ -151,7 +149,7 @@ class AddEntryViewController: UIViewController {
     }
 
     private func isDateValid() -> Bool {
-        return startDatePicker.date.interval(ofComponent: .day, fromDate: endDatePicker.date) >= 0.0
+        startDatePicker.date.interval(ofComponent: .day, fromDate: endDatePicker.date) >= 0.0
     }
     
     //MARK: - Editing
@@ -168,18 +166,16 @@ class AddEntryViewController: UIViewController {
 extension AddEntryViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return LeaveType.allCases.count
-
+        LeaveType.allCases.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return LeaveType.allCases[row].rawValue
+        LeaveType.allCases[row].rawValue
     }
     
 }

@@ -89,3 +89,14 @@ enum LeaveType: String, CaseIterable {
     case Annual, Sick
 }
 
+
+extension Calendar {
+    //returns number of days including today, good for hotel booking
+    func numberOfDaysBetween(_ from: Date, and to: Date) -> Int {
+        let fromDate = startOfDay(for: from)
+        let toDate = startOfDay(for: to)
+        let numberOfDays = dateComponents([.day], from: fromDate, to: toDate)
+        
+        return numberOfDays.day! + 1
+    }
+}
